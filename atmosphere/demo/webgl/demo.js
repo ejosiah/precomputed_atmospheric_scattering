@@ -136,13 +136,13 @@ in the <code>Utils</code> class below):
           IRRADIANCE_TEXTURE_HEIGHT, 0, gl.RGBA, gl.FLOAT, data);
     });
 
-    Utils.loadShaderSource('vertex_shader.txt', (source) => {
+    Utils.loadShaderSource('vertex_shader.glsl', (source) => {
       this.vertexShaderSource = source;
     });
-    Utils.loadShaderSource('fragment_shader.txt', (source) => {
+    Utils.loadShaderSource('fragment_shader.glsl', (source) => {
       this.fragmentShaderSource = source;
     });
-    Utils.loadShaderSource('atmosphere_shader.txt', (source) => {
+    Utils.loadShaderSource('atmosphere_shader.glsl', (source) => {
       this.atmosphereShaderSource = source;
     });
   }

@@ -8,6 +8,7 @@ uniform vec3 earth_center;
 uniform vec3 sun_direction;
 uniform vec2 sun_size;
 in vec3 view_ray;
+in vec2 uv;
 layout(location = 0) out vec4 color;
 const float PI = 3.14159265;
 const vec3 kSphereCenter = vec3(0.0, 0.0, 1000.0) / kLengthUnitInMeters;
@@ -156,4 +157,6 @@ void main() {
   color.rgb = 
       pow(vec3(1.0) - exp(-radiance / white_point * exposure), vec3(1.0 / 2.2));
   color.a = 1.0;
+
+  color = texture(transmittance_texture, uv); 
 }
